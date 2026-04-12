@@ -2,5 +2,13 @@ venv/
 .env
 __pycache__/
 *.pyc
+*.log
 churn_pipeline.log
+kafka_churn.log
+dbt/profiles.yml
+dbt/logs/
+dbt/.user.yml
+dbt/target/
 data/processed/
+data/raw/
+data/reports/

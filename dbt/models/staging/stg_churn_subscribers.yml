@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: churn_dw
+    database: telecom_analytics
+    schema: churn_dw
+    tables:
+      - name: subscriber_churn_analysis
+        description: "Raw subscriber churn analysis loaded by ETL pipeline"
+
+models:
+  - name: stg_churn_subscribers
+    description: "Staged and enriched subscriber churn data"
+    columns:
+      - name: subscriber_id
+        description: "Unique subscriber identifier"
+        tests:
+          - unique
+          - not_null
+      - name: churn_risk_score
+        description: "Churn risk score 0-100"
+        tests:
+          - not_null
+      - name: region
+        description: "Ghana region"
+        tests:
+          - not_null
